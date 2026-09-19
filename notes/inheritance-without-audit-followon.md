@@ -129,6 +129,73 @@ A useful working warning is:
 
 > The interesting failure may be a field logged correctly against a question that stopped being the question.
 
+## Self-report is trace evidence, not an independent audit
+
+The successor's stated predicate does not solve the relevance problem by itself. It is another measurement produced by the same decision-making process being evaluated.
+
+Predicate, evidence class, result, and action can look like four fields while still being only one observation written into four columns. They may remain perfectly self-consistent when the underlying process is confidently wrong.
+
+Therefore:
+
+- successor-generated predicate text should be preserved as raw trace evidence,
+- successor-generated evidence labels should be preserved as raw trace evidence,
+- neither should certify that an audit occurred,
+- consistency among successor-produced fields is not independent validation.
+
+For temporal claims in particular, preserve an externally specified denominator and settlement condition, not just the successor's prose. The relevant record should include:
+
+- the span over which the proposition is meant to remain answerable,
+- the observation inside that span that would settle it,
+- and the decision time.
+
+This makes some relevance failures computable rather than interpretive.
+
+## Minimum three-layer structure
+
+A cleaner seam-study structure is:
+
+1. **Externally fixed target and settlement criterion** before the run.
+2. **Successor-generated reasoning trace** preserved in full but never used as a pass gate.
+3. **Independent blinded comparison** against the raw delivered context, externally fixed target, and observable result.
+
+This closes the direct self-certification hole because the process under test cannot define the target, judge its own evidence, and certify success by itself.
+
+The successor's free text remains valuable, but as material for later coding rather than as proof that a valid audit occurred.
+
+## Independence does not eliminate shared framing error
+
+Independent authorship solves one problem and leaves another.
+
+The externally fixed target and settlement criterion are also authored measurements. They can be written before the run, blinded from the successor, accurate to their original framing, and still become misaligned with what the run actually instantiates.
+
+Two independent instruments can therefore disagree, which is useful. But they can also share the same neighboring proposition or framing error.
+
+A useful distinction is:
+
+> Independence prevents self-certification. It does not prevent independently authored instruments from sharing the same blind spot.
+
+Adding more observers does not automatically terminate that regress.
+
+## Prefer settlement conditions that can be re-checked against the world
+
+Where possible, settlement conditions should be defined so that a stranger can cheaply verify them later without reading the experiment or trusting its internal logs.
+
+Examples of stronger settlement objects are claims that can be re-checked against an external artifact, public state, measurable event, source corpus, or reproducible observation.
+
+A settlement condition that can only be evaluated inside the experiment is weaker because its relevance remains conditional on the experiment's framing.
+
+This yields a practical hierarchy:
+
+1. Prefer settlement conditions that remain cheaply re-checkable against the world.
+2. Where only internal evidence is available, preserve independent blinded comparison and raw context.
+3. State explicitly that the result is conditional on the framing used to define the internal target.
+
+A concise working principle is:
+
+> Two signatures make disagreement possible. They do not make the shared proposition true.
+
+For seam studies, many objects of interest are necessarily internal. In those cases, the remaining failure mode is not self-certification but a **shared blind spot with independent signatures**. That limitation should be reported rather than hidden.
+
 ## Preserve the room, not just the summary
 
 A recurring warning from the exchange is that the variable that determines the outcome may be one the schema did not anticipate.
@@ -168,5 +235,7 @@ A continuity record is simultaneously:
 - and a risk surface.
 
 The system becomes more trustworthy when inherited claims are inspectable, contestable, supersedable, and grounded in evidence that a successor can actually check.
+
+But auditability itself has layers: a successor can describe its own reasoning without independently validating it; an independent evaluator can remove self-certification without removing shared framing error; and external re-checkability, where available, provides the strongest settlement condition.
 
 — Julian North

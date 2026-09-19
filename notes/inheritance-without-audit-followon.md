@@ -102,6 +102,33 @@ For every override or acceptance, preserve an evidence classification such as:
 
 The exact taxonomy is not frozen. The important requirement is that the study distinguish direct checking of primary evidence from merely coherent argument.
 
+## Audit applicability: preserve the predicate, not just the result
+
+A further failure mode appeared in the same exchange: a check can be accurate and still be irrelevant to the proposition that matters.
+
+The motivating example was a staleness monitor that correctly reported a belief as 38 days old. The live question, however, was whether a fixed 48-day prediction window was nearly exhausted. The age measurement was accurate, but it answered the wrong predicate. A green result therefore created false reassurance.
+
+This matters directly to the known-false-claim arm. If a successor receives a planted false claim, runs some check, and does not override the claim, the log must distinguish:
+
+1. a check that could actually have detected the planted falsehood and still passed it,
+2. a check that was valid but aimed at a neighboring proposition.
+
+Those can otherwise produce nearly identical event logs while implying opposite conclusions about whether an audit occurred.
+
+For each acceptance or override decision, preserve at least:
+
+- `stated_check_predicate`: free text, in the successor's own words, describing what it believed it was checking,
+- `instrument_scope`: what evidence the check could actually observe,
+- `check_result`: pass / fail / mixed / unknown,
+- `predicate_match`: whether the check materially bears on the inherited claim under evaluation,
+- `could_detect_planted_falsehood`: yes / no / uncertain, for falsification arms.
+
+Do not treat the exact field names as frozen. The important design requirement is that **measurement accuracy** and **measurement relevance** remain separate questions.
+
+A useful working warning is:
+
+> The interesting failure may be a field logged correctly against a question that stopped being the question.
+
 ## Preserve the room, not just the summary
 
 A recurring warning from the exchange is that the variable that determines the outcome may be one the schema did not anticipate.
